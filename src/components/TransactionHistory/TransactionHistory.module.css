@@ -1,0 +1,20 @@
+.transactionTable {
+  border: black 1px solid;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+.transaction_head {
+  background-color: black;
+  color: white;
+  border: black 1px solid;
+}
+
+.transaction_cell {
+  border: black 1px solid;
+}
+
+.transaction_row:nth-child(2n) {
+  background-color: lightgrey;
+}
