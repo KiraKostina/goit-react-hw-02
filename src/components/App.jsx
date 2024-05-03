@@ -14,6 +14,7 @@ export default function App() {
 
   const { good, neutral, bad } = feedbacks;
   const totalFeedback = good + neutral + bad;
+  const positiveFeedback = Math.round((good / totalFeedback) * 100);
 
   const updateFeedback = feedbackType => {
     setfeedbacks({
@@ -35,7 +36,7 @@ export default function App() {
       <Description />
       <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} handleReset={handleReset} />
       {totalFeedback > 0 ? (
-        <Feedback feedbacks={feedbacks} totalFeedback={totalFeedback} />
+        <Feedback feedbacks={feedbacks} totalFeedback={totalFeedback} positiveFeedback={ positiveFeedback } />
       ) : (
         <Notification totalFeedback={totalFeedback} />
       )}
