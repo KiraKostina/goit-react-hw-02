@@ -13,27 +13,20 @@ export default function App() {
 
   const { good, neutral, bad } = feedbacks;
   
+  const updateFeedback = (feedbackType) => {
+    setfeedbacks({
+      ...feedbacks,
+      [feedbackType]: feedbacks[feedbackType] + 1
+    });
+  };
 
 
   return (
     <>
       <Description />
-       <Options />
+      <Options updateFeedback={updateFeedback} />
       <Feedback feedbacks={{ good, neutral, bad }} /> 
 
     </>
   );
 }
-
-
-//  <Profile
-//         name={userData.username}
-//         tag={userData.tag}
-//         location={userData.location}
-//         image={userData.avatar}
-//         stats={userData.stats}
-//       />
-
-//       <FriendList friends={friends} />
-
-//       <TransactionHistory items={transactions} />
