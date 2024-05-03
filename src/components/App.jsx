@@ -22,10 +22,18 @@ export default function App() {
     });
   };
 
+  const handleReset = () => {
+    setfeedbacks({
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    });
+  };
+
   return (
     <>
       <Description />
-      <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} />
+      <Options updateFeedback={updateFeedback} totalFeedback={totalFeedback} handleReset={handleReset} />
       {totalFeedback > 0 ? (
         <Feedback feedbacks={feedbacks} totalFeedback={totalFeedback} />
       ) : (
