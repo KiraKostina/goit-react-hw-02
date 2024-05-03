@@ -19,7 +19,7 @@ export default function App() {
     <>
       <Description />
        <Options />
-      <Feedback/> 
+      <Feedback feedbacks={{ good, neutral, bad }} /> 
 
     </>
   );
